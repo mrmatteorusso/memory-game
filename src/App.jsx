@@ -192,14 +192,33 @@ function App() {
           <ChooseApi handleChange={machApi} />
           <div>
             <label htmlFor="number">How many pairs? </label>
-            <input type="number" id="number" min="1" onChange={() => setChosenNumberOfCards(event.target.value)} />
+            <input type="number" id="number" min="1" max="20" onChange={() => setChosenNumberOfCards(event.target.value)} />
           </div>
 
-          <button disabled={apiChoice === "" || chosenNumberOfCards < 1} className="primary-btn" onClick={() => {
-            fetchWhenStart()
-            setIsAtStart(false)
-          }
-          }> Start</button>
+          <button
+            disabled={apiChoice === "" || chosenNumberOfCards < 1}
+            className="primary-btn"
+
+            onClick={() => {
+              if (apiChoice === "" || chosenNumberOfCards < 1) {
+                console.log("Button is disabled, so clicking it won't do anything.");
+              } else {
+                fetchWhenStart();
+                setIsAtStart(false);
+              }
+            }}
+          // onClick={() => {
+          //   if (apiChoice === "" || chosenNumberOfCards < 1) {
+          //     console.log("clicked anyway")
+
+          //   } else {
+
+          //     fetchWhenStart()
+          //     setIsAtStart(false)
+          //   }
+          // }
+          // }
+          > Start</button>
         </div>
       }
       <div
