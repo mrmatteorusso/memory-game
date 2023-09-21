@@ -167,17 +167,13 @@ function App() {
 
     // Set the body to a fixed position and prevent scrolling
     document.body.style.position = 'fixed';
-    // document.body.style.top = "0px";
-    // document.body.style.left = "0px";
+    document.body.style.width = "100%";
   }
 
   return (
-    // <div className={"main-container" && match === cards.length / 2 ? "stop-scrolling" : ""}>
     <div className="main-container">
-      {/* module with rules: choose number of cards , cats or dogs.. */}
       < h1 >
         Memory Card Game
-
       </h1 >
       <nav>
         {match !== cards.length / 2 &&
@@ -207,17 +203,6 @@ function App() {
                 setIsAtStart(false);
               }
             }}
-          // onClick={() => {
-          //   if (apiChoice === "" || chosenNumberOfCards < 1) {
-          //     console.log("clicked anyway")
-
-          //   } else {
-
-          //     fetchWhenStart()
-          //     setIsAtStart(false)
-          //   }
-          // }
-          // }
           > Start</button>
         </div>
       }
@@ -258,33 +243,3 @@ function App() {
 }
 
 export default App
-
-
-// function myfunction() { }
-
-// function anotherFunction() {
-//   return myfunction; //function myfunction(){}
-// }
-
-// function anotherFunction2() {
-//   return myfunction(); //undefined
-// }
-
-//async return always a promise
-
-// async function hello() { return ["hello"] }
-
-// function test() {
-//   //const mama2 = await hello(basket);
-//   return hello().then((result) =>
-
-//     console.log("mama inside:", result)
-
-//   );
-//   console.log("mama:", mama);
-//   console.log("test");
-// }
-
-// test()
-
-
